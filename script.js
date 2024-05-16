@@ -33,6 +33,26 @@ const getRandomPic = ()  =>  {
     return randomPicPath
 }
 
-const pic = getRandomPic()
-console.log("From function ::" + pic)
-cardellPicEl.src = pic
+// const pic = getRandomPic()
+// console.log("From function ::" + pic)
+// cardellPicEl.src = pic
+
+const updateImage = () => {
+    const pic = getRandomPic();
+    console.log("From function ::" + pic);
+    cardellPicEl.src = pic;
+    
+    // Apply fade-in animation
+    cardellPicEl.classList.remove("fade-out");
+    cardellPicEl.classList.add("fade-in");
+    
+    setTimeout(() => {
+        // Apply fade-out animation after 3 seconds
+        cardellPicEl.classList.remove("fade-in");
+        cardellPicEl.classList.add("fade-out");
+    }, 4000);
+};
+
+updateImage();
+
+setInterval(updateImage, 7000);
