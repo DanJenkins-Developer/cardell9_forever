@@ -93,4 +93,4 @@ updateImage();
 
 
 
-setInterval(updateImage, 7000);
+setInterval(updateImage, 10000);
