@@ -31,11 +31,13 @@ const picsNamesLength = picNames.length - 1
 
 const getNextPicturePath = ()  =>  {
     
-    const currentDir = window.location.pathname;
+    // const currentDir = window.location.pathname;
 
-    const pathWithoutFile = currentDir.replace(/\/[^/]+$/, "");
+    // const pathWithoutFile = currentDir.replace(/\/[^/]+$/, "");
 
-    const picsDir = pathWithoutFile + "/cardell_pics/"
+    // const picsDir = pathWithoutFile + "/cardell_pics/"
+
+    const picsDir = './cardell_pics/'
 
     
 
