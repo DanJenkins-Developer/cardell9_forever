@@ -6,6 +6,14 @@ const picNames = ['20220406_132216.jpg', 'E77FBF21-9EB8-49B7-80EB-DA33BF4FD718.j
 let index = 0
 const picsNamesLength = picNames.length - 1
 
+const preloadImages = () => {
+    const picsDir = './cardell_pics/';
+  
+    picNames.forEach(picName => {
+      const img = new Image();
+      img.src = picsDir + picName;
+    });
+  };
 
 // const getRandomPic = (index)  =>  {
     
@@ -31,6 +39,7 @@ const picsNamesLength = picNames.length - 1
 
 const getNextPicturePath = ()  =>  {
     
+    preloadImages(); // Call preloadImages before updating the image
     // const currentDir = window.location.pathname;
 
     // const pathWithoutFile = currentDir.replace(/\/[^/]+$/, "");
@@ -77,6 +86,7 @@ const updateImage = () => {
     }, 4000);
 };
 
+preloadImages(); // Call preloadImages once before starting the interval
 updateImage();
 
 setInterval(updateImage, 7000);
