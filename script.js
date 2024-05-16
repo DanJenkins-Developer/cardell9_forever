@@ -2,17 +2,14 @@
 
 const cardellPicEl = document.getElementById("cardell_pic")
 
-const getRandomPic = ()  =>  {
+
+const getRandomPic = (index)  =>  {
     
     const currentDir = window.location.pathname;
 
     const pathWithoutFile = currentDir.replace(/\/[^/]+$/, "");
 
     const picsDir = pathWithoutFile + "/cardell_pics/"
-
-    console.log(currentDir)
-    console.log(pathWithoutFile)
-    console.log(picsDir)
 
     const picNames = ['20220406_132216.jpg', 'E77FBF21-9EB8-49B7-80EB-DA33BF4FD718.jpg', 'IMG_0928.jpg']
 
@@ -23,22 +20,23 @@ const getRandomPic = ()  =>  {
 
     const randomPicName = picNames[randomNumber]
 
-    console.log(randomNumber)
-    console.log(randomPicName)
-
     const randomPicPath = picsDir + randomPicName
-
-    console.log(randomPicPath)
 
     return randomPicPath
 }
+
+
 
 // const pic = getRandomPic()
 // console.log("From function ::" + pic)
 // cardellPicEl.src = pic
 
+
+
 const updateImage = () => {
+
     const pic = getRandomPic();
+    //const pic = getPicture();
     console.log("From function ::" + pic);
     cardellPicEl.src = pic;
     

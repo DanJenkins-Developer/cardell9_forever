@@ -1,6 +1,5 @@
 /* Hello */
 
-
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -16,26 +15,38 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: black;
-  }
-  
-  div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+
+.text-container {
     text-align: center;
-  }
-  
-  img {
+    color: red;
+    font-size: 3rem;
+    font-weight: bold;
+    /* padding-top: 2px; */
+}
+
+.text-container h1,
+.text-container h5 {
+    margin: 0.5rem 0; /* Reduce the margin between h1 and h5 */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 7rem); /* Subtract the text container height */
+}
+
+img {
     max-width: 100%;
     max-height: 80vh;
     height: auto;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-  }
-  
-  .fade-in {
+}
+
+.fade-in {
     animation-name: fadeIn;
 }
 
