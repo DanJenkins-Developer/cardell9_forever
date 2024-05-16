@@ -6,6 +6,16 @@ const picNames = ['20220406_132216.jpg', 'E77FBF21-9EB8-49B7-80EB-DA33BF4FD718.j
 let index = 0
 const picsNamesLength = picNames.length - 1
 
+function preloadImages() {
+    const imagesToPreload = ['20220406_132216.jpg', 'E77FBF21-9EB8-49B7-80EB-DA33BF4FD718.jpg', 'IMG_0928.jpg', '7473AC61-57B2-42E3-8C16-51D615774F1E.jpg', 'IMG_0592.jpg' , 'IMG_5148.png', '1A674065-B3B7-42CA-8DCD-B2226CA6C1D4.jpg', '3FC04FD3-A607-4615-B507-2034BE66EBFF.jpg', 'IMG_20220331_134320186_HDR.jpg'];
+    for (let i = 0; i < imagesToPreload.length; i++) {
+      const img = new Image();
+      img.src = imagesToPreload[i];
+    }
+  }
+
+  window.addEventListener('load', preloadImages);
+
 
 // const getRandomPic = (index)  =>  {
     
@@ -77,6 +87,9 @@ const updateImage = () => {
     }, 4000);
 };
 
+
 updateImage();
+
+
 
 setInterval(updateImage, 7000);
